@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pictogram_people"
+version = "0.1.0"
+description = "Pictogram people data visualizations — bar charts where human silhouettes vary in fatness to represent data values"
+requires-python = ">=3.9"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "GPTomics"}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+dependencies = ["matplotlib>=3.5", "numpy>=1.21", "scipy>=1.9"]
+
+[project.urls]
+Homepage = "https://github.com/GPTomics/pictogram_people"
+Repository = "https://github.com/GPTomics/pictogram_people"
+
+[tool.setuptools.package-data]
+pictogram_people = ["silhouette_data.npz"]
+
+[project.optional-dependencies]
+dev = ["jupyter"]
