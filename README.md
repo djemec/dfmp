@@ -1,4 +1,4 @@
-# pictogram_people
+# dfmp
 
 A matplotlib-based library that generates "pictogram people" charts -- bar charts where human silhouettes are horizontally scaled (wider/thinner) and vertically scaled (taller/shorter) to represent data values.
 
@@ -9,14 +9,14 @@ A matplotlib-based library that generates "pictogram people" charts -- bar chart
 Requires Python 3.9+.
 
 ```bash
-pip install git+https://github.com/GPTomics/pictogram_people.git
+pip install git+https://github.com/djemec/dfmp.git
 ```
 
 Or install locally for development:
 
 ```bash
-git clone https://github.com/GPTomics/pictogram_people.git
-cd pictogram_people
+git clone https://github.com/djemec/dfmp.git
+cd dfmp
 pip install -e ".[dev]"
 ```
 
@@ -29,9 +29,9 @@ pip install -e ".[dev]"
 ## Quick start
 
 ```python
-from pictogram_people import pictogram
+from dfmp import plot
 
-pictogram(['A', 'B', 'C', 'D', 'E'], [12, 35, 28, 50, 19])
+plot(['A', 'B', 'C', 'D', 'E'], [12, 35, 28, 50, 19])
 ```
 
 The API is designed to mirror `plt.bar()` -- if you know how to make a bar chart, you know how to make a pictogram.
@@ -39,9 +39,9 @@ The API is designed to mirror `plt.bar()` -- if you know how to make a bar chart
 ## API
 
 ```python
-pictogram(x, height, *, color=None, alpha=None, tick_label=None,
-          label=None, show_values=True, value_format=None,
-          ax=None, **kwargs)
+plot(x, height, *, color=None, alpha=None, tick_label=None,
+     label=None, show_values=True, value_format=None,
+     ax=None, **kwargs)
 ```
 
 ### Parameters
@@ -68,9 +68,9 @@ pictogram(x, height, *, color=None, alpha=None, tick_label=None,
 ### Basic usage
 
 ```python
-from pictogram_people import pictogram
+from dfmp import plot
 
-pictogram(['A', 'B', 'C'], [10, 20, 30])
+plot(['A', 'B', 'C'], [10, 20, 30])
 ```
 
 ### Custom colors
@@ -80,7 +80,7 @@ A single color string applies to all figures. A list assigns one color per figur
 ```python
 import matplotlib.pyplot as plt
 
-pictogram(
+plot(
     ['A', 'B', 'C'],
     [10, 50, 100],
     color=['#E76F51', '#2A9D8F', '#264653'],
@@ -94,10 +94,10 @@ Use a format string or a callable to control how values are displayed.
 
 ```python
 # Format string
-pictogram(['X', 'Y', 'Z'], [3.14, 2.72, 1.62], value_format='{:.1f}')
+plot(['X', 'Y', 'Z'], [3.14, 2.72, 1.62], value_format='{:.1f}')
 
 # Callable
-pictogram(['X', 'Y', 'Z'], [0.25, 0.50, 0.75], value_format=lambda v: f'{v:.0%}')
+plot(['X', 'Y', 'Z'], [0.25, 0.50, 0.75], value_format=lambda v: f'{v:.0%}')
 ```
 
 ### Drawing on an existing axes
@@ -108,17 +108,17 @@ Pass an `ax` to draw on a pre-existing figure, just like seaborn or matplotlib.
 import matplotlib.pyplot as plt
 
 fig, ax = plt.subplots(figsize=(10, 6))
-pictogram(['A', 'B', 'C'], [10, 20, 30], ax=ax)
+plot(['A', 'B', 'C'], [10, 20, 30], ax=ax)
 ```
 
 ### Composing with matplotlib
 
-Since `pictogram()` returns the axes, standard matplotlib calls work as expected.
+Since `plot()` returns the axes, standard matplotlib calls work as expected.
 
 ```python
 import matplotlib.pyplot as plt
 
-pictogram(['A', 'B', 'C'], [10, 20, 30])
+plot(['A', 'B', 'C'], [10, 20, 30])
 plt.title('My chart')
 plt.xlabel('Categories')
 ```
@@ -128,7 +128,7 @@ plt.xlabel('Categories')
 There is no `output_path` parameter -- use matplotlib's standard `savefig` workflow.
 
 ```python
-ax = pictogram(['A', 'B', 'C'], [10, 20, 30])
+ax = plot(['A', 'B', 'C'], [10, 20, 30])
 ax.figure.savefig('chart.png', dpi=150, bbox_inches='tight', facecolor='white')
 ```
 

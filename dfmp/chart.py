@@ -6,9 +6,9 @@ from .silhouette import make_silhouette_path
 from .config import DEFAULT_COLOR, LABEL_FONTSIZE, VALUE_FONTSIZE, MIN_HEIGHT_FRAC
 
 
-def pictogram(x, height, *, color=None, alpha=None, tick_label=None,
-              label=None, show_values=True, value_format=None,
-              ax=None, **kwargs):
+def plot(x, height, *, color=None, alpha=None, tick_label=None,
+         label=None, show_values=True, value_format=None,
+         ax=None, **kwargs):
     '''Draw a pictogram people chart where silhouettes are scaled to represent data values.
 
     Drop-in alternative to ``plt.bar()`` — pass the same ``x`` and ``height``
@@ -49,17 +49,17 @@ def pictogram(x, height, *, color=None, alpha=None, tick_label=None,
     --------
     Basic usage — drop-in replacement for ``plt.bar()``:
 
-    >>> pictogram(['A', 'B', 'C'], [10, 20, 30])
+    >>> plot(['A', 'B', 'C'], [10, 20, 30])
 
     Custom colors and value formatting:
 
-    >>> pictogram(['X', 'Y'], [3.14, 2.72], color=['#E76F51', '#264653'],
+    >>> plot(['X', 'Y'], [3.14, 2.72], color=['#E76F51', '#264653'],
     ...           value_format='{:.1f}')
 
     Draw on an existing axes:
 
     >>> fig, ax = plt.subplots()
-    >>> pictogram(['A', 'B'], [5, 10], ax=ax)
+    >>> plot(['A', 'B'], [5, 10], ax=ax)
     '''
     x = list(x)
     n = len(x)

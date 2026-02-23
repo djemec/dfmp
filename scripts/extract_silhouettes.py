@@ -6,7 +6,7 @@ from scipy import ndimage
 from pathlib import Path
 
 EXAMPLES_DIR = Path(__file__).parent.parent / 'examples'
-OUTPUT_PATH = Path(__file__).parent.parent / 'pictogram_people' / 'silhouette_data.npz'
+OUTPUT_PATH = Path(__file__).parent.parent / 'dfmp' / 'silhouette_data.npz'
 
 REFERENCE_IMAGES = [
     ('example_skinny.png', 10.2),
