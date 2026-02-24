@@ -101,6 +101,20 @@ fig, ax = plt.subplots(figsize=(10, 6))
 plot(['A', 'B', 'C'], [10, 20, 30], ax=ax)
 ```
 
+## Testing
+
+```bash
+pytest --tb=short -q
+```
+
+With coverage:
+
+```bash
+pytest --cov --cov-report=term-missing
+```
+
+Current coverage: **100%** (46 tests).
+
 ## License
 
 MIT
