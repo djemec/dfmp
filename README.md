@@ -1,8 +1,8 @@
 # dfmp
 
-A matplotlib-based library that generates "pictogram people" charts -- bar charts where human silhouettes are horizontally scaled (wider/thinner) and vertically scaled (taller/shorter) to represent data values.
+A matplotlib-based library that generates bar charts where human silhouettes are horizontally scaled (wider/thinner) and vertically scaled (taller/shorter) to represent data values.
 
-![Example pictogram chart](resources/readme_example.png)
+![Example plot](resources/readme_example.png)
 
 ## How it works
 
@@ -38,7 +38,7 @@ from dfmp import plot
 plot(['A', 'B', 'C', 'D', 'E'], [12, 35, 28, 50, 19])
 ```
 
-The API is designed to mirror `plt.bar()` -- if you know how to make a bar chart, you know how to make a pictogram.
+The API is designed to mirror `plt.bar()` -- if you know how to make a bar chart, you know how to make a dfmp plot.
 
 ## API
 

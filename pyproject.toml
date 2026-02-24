@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "dfmp"
 version = "0.1.0"
-description = "Pictogram people data visualizations — bar charts where human silhouettes vary in fatness to represent data values"
+description = "Bar charts where human silhouettes vary in fatness and height to represent data values"
 requires-python = ">=3.9"
 readme = "README.md"
 license = "MIT"

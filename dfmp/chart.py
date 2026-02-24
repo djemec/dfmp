@@ -9,7 +9,7 @@ from .config import DEFAULT_COLOR, LABEL_FONTSIZE, VALUE_FONTSIZE, MIN_HEIGHT_FR
 def plot(x, height, *, color=None, alpha=None, tick_label=None,
          label=None, show_values=True, value_format=None,
          ax=None, **kwargs):
-    '''Draw a pictogram people chart where silhouettes are scaled to represent data values.
+    '''Draw a plot where silhouettes are scaled to represent data values.
 
     Drop-in alternative to ``plt.bar()`` — pass the same ``x`` and ``height``
     and get scaled human silhouettes instead of rectangular bars.
