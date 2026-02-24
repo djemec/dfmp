@@ -1,5 +1,7 @@
 # dfmp
 
+[![tests](https://github.com/djemec/dfmp/actions/workflows/tests.yml/badge.svg)](https://github.com/djemec/dfmp/actions/workflows/tests.yml)
+
 A matplotlib-based library that generates bar charts where human silhouettes are horizontally scaled (wider/thinner) and vertically scaled (taller/shorter) to represent data values.
 
 ![Example plot](resources/readme_example.png)
@@ -100,20 +102,6 @@ from dfmp import plot
 fig, ax = plt.subplots(figsize=(10, 6))
 plot(['A', 'B', 'C'], [10, 20, 30], ax=ax)
 ```
-
-## Testing
-
-```bash
-pytest --tb=short -q
-```
-
-With coverage:
-
-```bash
-pytest --cov --cov-report=term-missing
-```
-
-Current coverage: **100%** (46 tests).
 
 ## License
 
