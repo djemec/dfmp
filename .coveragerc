@@ -1,0 +1,10 @@
+[run]
+source = dfmp
+omit = scripts/*
+
+[report]
+show_missing = True
+fail_under = 80
+
+[html]
+directory = htmlcov

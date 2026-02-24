@@ -95,7 +95,8 @@ def plot(x, height, *, color=None, alpha=None, tick_label=None,
         fig_width = max(1.8 * n, 4.0)
         fig, ax = plt.subplots(figsize=(fig_width, 6.0))
 
-    patch_kwargs = dict(edgecolor='none', lw=0, **kwargs)
+    patch_kwargs = dict(edgecolor='none', lw=0)
+    patch_kwargs.update(kwargs)
     if alpha is not None:
         patch_kwargs['alpha'] = alpha
 

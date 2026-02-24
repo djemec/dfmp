@@ -4,4 +4,6 @@ __pycache__/
 .DS_Store
 .ipynb_checkpoints/
 examples/
+.coverage
+htmlcov/
 CLAUDE.md
